@@ -33,15 +33,15 @@ function App() {
 
   function handleDelete(indexToRemove) {
     let shadowArray = [...quotesArray];
-    shadowArray.splice(indexToRemove, 1)
+    shadowArray.splice(indexToRemove, 1);
     setQuotesArray(shadowArray);
-  };
+  }
 
   function handleEdit(index, sentence, author) {
     let shadowArray = [...quotesArray];
-    shadowArray[index] = {sentence: sentence, author: author};
-    setQuotesArray(shadowArray)
-    setEditingIndex(null)
+    shadowArray[index] = { sentence: sentence, author: author };
+    setQuotesArray(shadowArray);
+    setEditingIndex(null);
   }
 
   return (
@@ -57,7 +57,9 @@ function App() {
             isEditing={editingIndex === index}
             selectEdit={() => setEditingIndex(index)}
             cancelEditing={() => setEditingIndex(null)}
-            onUpdate={(newSentence, newAuthor) => handleEdit(index, newSentence, newAuthor)}
+            onUpdate={(newSentence, newAuthor) =>
+              handleEdit(index, newSentence, newAuthor)
+            }
           />
         ))}
       </div>
