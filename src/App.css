@@ -1,0 +1,135 @@
+.quote-card-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.quote-card {
+  border: 2px solid black;
+  background: rgb(70, 24, 24);
+  text-align: start;
+  font-style: italic;
+  padding: 50px 50px 20px;
+  width: 750px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  position: relative;
+}
+
+.quote-card-fatrash {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+}
+
+.quote-card-fapen {
+  position: absolute;
+  top: 20px;
+  right: 60px;
+  font-size: 18px;
+  cursor: pointer;
+  color: white;
+}
+
+.quote-card-fatrash:hover,
+.quote-card-fapen:hover {
+  color: rgb(255, 73, 73);
+}
+
+.quote-sentence {
+  font-size: 40px;
+  color: white;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.quote-author-line {
+  height: 1px;
+  background: white;
+  margin: 0.5px 0;
+  align-self: center;
+}
+
+.quote-author {
+  font-size: 20px;
+  color: white;
+  align-self: center;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.quote-form {
+  padding: 30px;
+  background: rgb(70, 24, 24);
+  border: 2px solid black;
+  border-radius: 10px;
+  font-family: Arial;
+  margin: auto;
+  width: fit-content;
+  margin-bottom: 20px;
+}
+
+.quote-form-submit,
+.quote-form-cancel {
+  margin-top: 10px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+}
+
+.quote-form-submit {
+  color: black;
+  background-color: white;
+  border-color: rgb(0, 0, 0);
+  margin-right: 4px;
+}
+.quote-form-submit:hover {
+  color: green;
+}
+
+.quote-form-cancel {
+  color: black;
+  background-color: white;
+  border-color: rgb(0, 0, 0);
+  margin-right: 4px;
+}
+
+.quote-form-cancel:hover {
+  color: red;
+}
+
+.quote-form-input div {
+  font-weight: 520;
+  color: white;
+}
+
+.quote-form-input input {
+  padding: 5px 10px;
+  width: 350px;
+}
+
+.quote-form-input:first-child {
+  margin-bottom: 5px;
+}
+
+.app-background {
+  margin: 20px;
+  flex: 1;
+  height: 100%;
+}
+
+body, #root {
+  margin: 0px;
+  display: flex;
+  width: 100%;
+  background: #833AB4;
+  background: linear-gradient(90deg, rgba(131, 58, 180, 1) 0%, rgba(253, 29, 29, 1) 50%, rgba(252, 176, 69, 1) 100%);
+}
