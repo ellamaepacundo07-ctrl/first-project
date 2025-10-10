@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import QuoteFormEdit from "./QuoteFormEdit";
+import Swal from "sweetalert2";
 
 function QuoteCard({
   sentence,
@@ -26,8 +27,31 @@ function QuoteCard({
             <div className="quote-author-line" />
             {author}
           </div>
-          {/* Icons */}
-          <div className="quote-card-fatrash" onClick={onDelete}>
+
+          <div
+            className="quote-card-fatrash"
+            onClick={() => {
+              Swal.fire({
+                title: "Are you sure?",
+                text: "Do you want to delete this quote?",
+                showCancelButton: true,
+                confirmButtonText: "Yes",
+                cancelButtonText: "Cancel",
+                customClass: {
+                  popup: "custom-swal-popup",
+                  title: "custom-swal-title",
+                  confirmButton: "custom-swal-confirm",
+                  cancelButton: "custom-swal-cancel",
+                },
+                buttonsStyling: false,
+              }).then((result) => {
+                if (result.isConfirmed) {
+                  onDelete();
+                  Swal.fire("Your quote has been removed.");
+                }
+              });
+            }}
+          >
             <FontAwesomeIcon icon="trash" />
           </div>
           <div className="quote-card-fapen" onClick={selectEdit}>

@@ -40,6 +40,42 @@
 .quote-card-fapen:hover {
   color: #4cbb17;
 }
+.custom-swal-popup {
+  max-width: 300px;
+  border: 2px solid black;
+  border-radius: 10px;
+  color: black;
+  font-size: 12px;
+}
+
+.custom-swal-title {
+  color: black;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.custom-swal-confirm,
+.custom-swal-cancel {
+  padding: 4px 8px;
+  margin: 10px 5px 0 5px;
+  font-size: 10px;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.custom-swal-confirm:hover {
+  background-color: #4cbb17;
+  color: white;
+}
+
+.custom-swal-cancel:hover {
+  background-color: red;
+  color: white;
+}
 
 .quote-sentence {
   font-size: 40px;
