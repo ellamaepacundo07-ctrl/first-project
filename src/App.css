@@ -40,7 +40,7 @@
 .quote-card-fapen:hover {
   color: #4cbb17;
 }
-.custom-swal-popup {
+.delete-swal-popup {
   max-width: 300px;
   border: 2px solid black;
   border-radius: 10px;
@@ -48,14 +48,14 @@
   font-size: 12px;
 }
 
-.custom-swal-title {
+.delete-swal-title {
   color: black;
   font-size: 18px;
   font-weight: bold;
 }
 
-.custom-swal-confirm,
-.custom-swal-cancel {
+.delete-swal-confirm,
+.delete-swal-cancel {
   padding: 4px 8px;
   margin: 10px 5px 0 5px;
   font-size: 10px;
@@ -67,14 +67,18 @@
   cursor: pointer;
 }
 
-.custom-swal-confirm:hover {
+.delete-swal-confirm:hover {
   background-color: #4cbb17;
   color: white;
 }
 
-.custom-swal-cancel:hover {
+.delete-swal-cancel:hover {
   background-color: red;
   color: white;
+}
+
+.delete-swal-result {
+  background-color: antiquewhite;
 }
 
 .quote-sentence {
@@ -128,7 +132,8 @@
   margin-right: 4px;
 }
 .quote-form-submit:hover {
-  color: #00573f;
+  background-color: #4cbb17;
+  color: white;
 }
 
 .quote-form-cancel {
@@ -139,7 +144,8 @@
 }
 
 .quote-form-cancel:hover {
-  color: red;
+  background-color: red;
+  color: white;
 }
 
 .quote-form-input div {
@@ -167,11 +173,11 @@ body,
   margin: 0px;
   display: flex;
   width: 100%;
-  background: #157d38;
+  background: #119960;
   background: linear-gradient(
     90deg,
-    rgba(21, 125, 56, 1) 11%,
-    rgba(87, 199, 133, 1) 78%,
-    rgba(237, 221, 83, 1) 100%
+    rgba(17, 153, 96, 1) 0%,
+    rgba(16, 84, 5, 1) 52%,
+    rgba(205, 217, 74, 1) 100%
   );
 }

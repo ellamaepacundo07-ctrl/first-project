@@ -38,10 +38,10 @@ function QuoteCard({
                 confirmButtonText: "Yes",
                 cancelButtonText: "Cancel",
                 customClass: {
-                  popup: "custom-swal-popup",
-                  title: "custom-swal-title",
-                  confirmButton: "custom-swal-confirm",
-                  cancelButton: "custom-swal-cancel",
+                  popup: "delete-swal-popup",
+                  title: "delete-swal-title",
+                  confirmButton: "delete-swal-confirm",
+                  cancelButton: "delete-swal-cancel",
                 },
                 buttonsStyling: false,
               }).then((result) => {
