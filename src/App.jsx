@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import LoginForm from "./component/LoginForm";
 import bookImage from "./assets/book.jpg";
 import QuoteCard from "./component/QuoteCard";
 import QuoteForm from "./component/QuoteForm";
@@ -11,6 +12,7 @@ library.add(faTrash, faPencilAlt);
 function App() {
   const [quotesArray, setQuotesArray] = useState([]);
   const [editingIndex, setEditingIndex] = useState(null);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
     setQuotesArray([

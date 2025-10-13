@@ -5,20 +5,25 @@ function QuoteForm(props) {
   const [author, setAuthor] = useState("");
 
   function onSubmit() {
-    const newArray = [
-      { sentence: sentence, author: author },
-      ...props.quotesArray,
-    ];
-    props.setQuoteArray(newArray);
-    setSentence("");
-    setAuthor("");
+    if (sentence.length > 0 && author.length > 0) {
+      const newArray = [
+        { sentence: sentence, author: author },
+        ...props.quotesArray,
+      ];
+      props.setQuoteArray(newArray);
+      setSentence("");
+      setAuthor("");
+      return;
+    }
+
+    alert("please enter inputs");
   }
 
   function onClear() {
     setSentence("");
     setAuthor("");
   }
-  
+
   return (
     <div className="quote-form">
       <div className="quote-form-input">
