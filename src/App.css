@@ -3,6 +3,11 @@
   flex-direction: column;
   gap: 20px;
 }
+.book-image {
+  width: 300px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
 
 .quote-card {
   border: 2px solid black;
@@ -36,13 +41,16 @@
   color: white;
 }
 
-.quote-card-fatrash:hover,
+.quote-card-fatrash:hover {
+  color: red;
+}
+
 .quote-card-fapen:hover {
   color: #4cbb17;
 }
 .delete-swal-popup {
   max-width: 300px;
-  border: 2px solid black;
+  border: 2px solid red;
   border-radius: 10px;
   color: black;
   font-size: 12px;
@@ -68,12 +76,12 @@
 }
 
 .delete-swal-confirm:hover {
-  background-color: #4cbb17;
+  background-color: red;
   color: white;
 }
 
 .delete-swal-cancel:hover {
-  background-color: red;
+  background-color: green;
   color: white;
 }
 

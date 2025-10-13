@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "./App.css";
+import bookImage from "./assets/book.jpg";
 import QuoteCard from "./component/QuoteCard";
 import QuoteForm from "./component/QuoteForm";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -48,6 +49,7 @@ function App() {
     <div className="app-background">
       <QuoteForm setQuoteArray={setQuotesArray} quotesArray={quotesArray} />
       <div className="quote-card-container">
+        <img src={bookImage} alt="Book" className="book-image" />
         {quotesArray.map((quote, index) => (
           <QuoteCard
             key={index}

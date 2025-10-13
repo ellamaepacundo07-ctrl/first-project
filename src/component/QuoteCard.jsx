@@ -43,7 +43,7 @@ function QuoteCard({
                   confirmButton: "delete-swal-confirm",
                   cancelButton: "delete-swal-cancel",
                 },
-                buttonsStyling: false,
+                buttonsStyling: false, 
               }).then((result) => {
                 if (result.isConfirmed) {
                   onDelete();
