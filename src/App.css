@@ -44,6 +44,92 @@
 .login-form button:hover {
   background-color: #0d7f4e;
 }
+.app-background {
+  flex: 1;
+  height: 100%;
+}
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #004d40;
+  color: white;
+  padding: 10px 30px; 
+  position: sticky; 
+  top: 0;
+  z-index: 1000;
+}
+.app-header button {
+  background-color: white;
+  color: #004d40;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.app-header button:hover {
+  background-color: #c8e6c9;
+}
+
+.site-title {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  font-weight: bold;
+  margin: 0;
+
+}
+.book-icon {
+  color: white;
+  font-size: 1.8rem;
+  margin-right: 12px;
+  vertical-align: middle;
+}
+
+.theme-toggle {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  z-index: 1000;
+  padding: 6px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.theme-toggle:hover {
+  color: rgb(146, 20, 104);
+}
+/* Book icon color changes by theme */
+.book-icon.light-icon {
+  color: #004d40; /* dark green for light mode */
+}
+
+.book-icon.dark-icon {
+  color: #ffffff; /* white for dark mode */
+}
+
+/* Optional: make theme toggle button more visible */
+.app-header button {
+  padding: 6px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.app-header.light button {
+  background-color: #ffffff;
+  color: #004d40;
+}
+
+.app-header.dark button {
+  background-color: #333333;
+  color: #ffffff;
+}
+
 
 .quote-card-container {
   display: flex;
@@ -133,7 +219,7 @@
 }
 
 .delete-swal-result {
-  background-color: antiquewhite;
+  background-color: white;
 }
 
 .quote-sentence {
@@ -214,7 +300,7 @@
 }
 
 .quote-form-input:first-child {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
 .app-background {
@@ -223,7 +309,7 @@
 }
 
 .app-content {
-  margin: 20px;
+  margin: 100px 20px 20px;
 }
 
 body,

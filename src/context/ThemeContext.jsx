@@ -23,5 +23,7 @@ export function ThemeProvider({ children }) {
     localStorage.setItem("theme", value);
   }
 
-  return <ThemeContext value={{ theme, changeTheme }}>{children}</ThemeContext>;
+  return <ThemeContext.Provider value={{ theme, changeTheme }}>
+    {children}
+    </ThemeContext.Provider>;
 }

@@ -3,12 +3,12 @@ import bookImage from "./assets/book.jpg";
 import QuoteCard from "./component/QuoteCard";
 import QuoteForm from "./component/QuoteForm";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
+import { faTrash, faPencilAlt, faBook } from "@fortawesome/free-solid-svg-icons";
 import useQuotes from "./hooks/useQuotes";
 import AppHeader from "./component/AppHeader";
 import useTheme from "./hooks/useTheme";
 
-library.add(faTrash, faPencilAlt);
+library.add(faTrash, faPencilAlt, faBook);
 
 function App() {
   const {
@@ -33,7 +33,6 @@ function App() {
 
         <div className="responsive">change me</div>
         <div className="quote-card-container">
-          <img src={bookImage} alt="Book" className="book-image" />
           {quotesArray.map((quote, index) => (
             <QuoteCard
               key={index}
