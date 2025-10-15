@@ -1,18 +1,13 @@
 import { useState } from "react";
 
-function QuoteForm(props) {
+function QuoteForm({ handleCreate }) {
   const [sentence, setSentence] = useState("");
   const [author, setAuthor] = useState("");
 
   function onSubmit() {
     if (sentence.length > 0 && author.length > 0) {
-      const newArray = [
-        { sentence: sentence, author: author },
-        ...props.quotesArray,
-      ];
-      props.setQuoteArray(newArray);
-      setSentence("");
-      setAuthor("");
+      handleCreate(sentence, author);
+      onClear();
       return;
     }
 

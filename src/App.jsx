@@ -1,71 +1,54 @@
-import React, { useEffect, useState } from "react";
 import "./App.css";
-import LoginForm from "./component/LoginForm";
 import bookImage from "./assets/book.jpg";
 import QuoteCard from "./component/QuoteCard";
 import QuoteForm from "./component/QuoteForm";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faTrash, faPencilAlt } from "@fortawesome/free-solid-svg-icons";
+import useQuotes from "./hooks/useQuotes";
+import AppHeader from "./component/AppHeader";
+import useTheme from "./hooks/useTheme";
 
 library.add(faTrash, faPencilAlt);
 
 function App() {
-  const [quotesArray, setQuotesArray] = useState([]);
-  const [editingIndex, setEditingIndex] = useState(null);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const {
+    quotesArray,
+    editingIndex,
+    handleDelete,
+    handleEdit,
+    handleSelectEdit,
+    handleCancelEdit,
+    handleCreate,
+    handleClearQuotes,
+  } = useQuotes();
 
-  useEffect(() => {
-    setQuotesArray([
-      {
-        sentence:
-          "Imagination is more important than knowledge. Knowledge is limited. Imagination encircles the world.",
-        author: "Albert Einstein",
-      },
-      {
-        sentence:
-          "The best and most beautiful things in the world cannot be seen or even touched. They must be felt with the heart",
-        author: "Joe Jackson",
-      },
-      {
-        sentence:
-          "My mission in life is not merely to survive, but to thrive. And to do so with some passion, some compassion, some humor, and some style",
-        author: "Margaret Thatcher",
-      },
-    ]);
-  }, []);
-
-  function handleDelete(indexToRemove) {
-    let shadowArray = [...quotesArray];
-    shadowArray.splice(indexToRemove, 1);
-    setQuotesArray(shadowArray);
-  }
-
-  function handleEdit(index, sentence, author) {
-    let shadowArray = [...quotesArray];
-    shadowArray[index] = { sentence: sentence, author: author };
-    setQuotesArray(shadowArray);
-    setEditingIndex(null);
-  }
+  const { theme } = useTheme();
 
   return (
-    <div className="app-background">
-      <QuoteForm setQuoteArray={setQuotesArray} quotesArray={quotesArray} />
-      <div className="quote-card-container">
-        <img src={bookImage} alt="Book" className="book-image" />
-        {quotesArray.map((quote, index) => (
-          <QuoteCard
-            key={index}
-            sentence={quote.sentence}
-            author={quote.author}
-            onDelete={() => handleDelete(index)}
-            isEditing={editingIndex === index}
-            selectEdit={() => setEditingIndex(index)}
-            cancelEditing={() => setEditingIndex(null)}
-            onUpdate={(newSentence, newAuthor) =>
-              handleEdit(index, newSentence, newAuthor)
-            }
-          />
-        ))}
+    <div className={`app-background ${theme === "dark" ? "dark" : "light"}`}>
+      <AppHeader />
+      <div className="app-content">
+        <QuoteForm handleCreate={handleCreate} />
+        <button onClick={handleClearQuotes}>clearall</button>
+
+        <div className="responsive">change me</div>
+        <div className="quote-card-container">
+          <img src={bookImage} alt="Book" className="book-image" />
+          {quotesArray.map((quote, index) => (
+            <QuoteCard
+              key={index}
+              sentence={quote.sentence}
+              author={quote.author}
+              onDelete={() => handleDelete(index)}
+              isEditing={editingIndex === index}
+              selectEdit={() => handleSelectEdit(index)}
+              cancelEditing={handleCancelEdit}
+              onUpdate={(newSentence, newAuthor) =>
+                handleEdit(index, newSentence, newAuthor)
+              }
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

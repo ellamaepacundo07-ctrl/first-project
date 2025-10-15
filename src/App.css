@@ -45,8 +45,6 @@
   background-color: #0d7f4e;
 }
 
-
-
 .quote-card-container {
   display: flex;
   flex-direction: column;
@@ -220,9 +218,12 @@
 }
 
 .app-background {
-  margin: 20px;
   flex: 1;
   height: 100%;
+}
+
+.app-content {
+  margin: 20px;
 }
 
 body,
@@ -230,11 +231,22 @@ body,
   margin: 0px;
   display: flex;
   width: 100%;
-  background: #119960;
-  background: linear-gradient(
-    90deg,
-    rgba(17, 153, 96, 1) 0%,
-    rgba(16, 84, 5, 1) 52%,
-    rgba(205, 217, 74, 1) 100%
-  );
+  background: #ffffff;
+}
+
+.responsive {
+  padding: 5px;
+  background-color: black;
+  color: white;
+}
+
+.dark .responsive {
+  background-color: white;
+  color: black;
+}
+
+body,
+#root:has(> .dark) {
+  width: 100%;
+  background: #0f1110;
 }
