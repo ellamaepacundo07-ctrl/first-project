@@ -10,7 +10,7 @@ export default function AppHeader() {
         <FontAwesomeIcon icon="book" className="book-icon" /> My Library</h1>
       <button 
         onClick={() => changeTheme(theme === "dark" ? "light" : "dark")}>
-        {theme === "dark" ? "change to light" : "change to dark"}
+        {theme === "dark" ? "light Mode" : "Dark Mode"}
       </button>
     </div>
   );

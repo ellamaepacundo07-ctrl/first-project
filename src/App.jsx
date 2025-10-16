@@ -1,5 +1,4 @@
 import "./App.css";
-import bookImage from "./assets/book.jpg";
 import QuoteCard from "./component/QuoteCard";
 import QuoteForm from "./component/QuoteForm";
 import { library } from "@fortawesome/fontawesome-svg-core";
