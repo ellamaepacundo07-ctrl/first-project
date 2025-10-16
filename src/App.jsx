@@ -2,7 +2,11 @@ import "./App.css";
 import QuoteCard from "./component/QuoteCard";
 import QuoteForm from "./component/QuoteForm";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faTrash, faPencilAlt, faBook } from "@fortawesome/free-solid-svg-icons";
+import {
+  faTrash,
+  faPencilAlt,
+  faBook,
+} from "@fortawesome/free-solid-svg-icons";
 import useQuotes from "./hooks/useQuotes";
 import AppHeader from "./component/AppHeader";
 import useTheme from "./hooks/useTheme";
@@ -28,9 +32,13 @@ function App() {
       <AppHeader />
       <div className="app-content">
         <QuoteForm handleCreate={handleCreate} />
-        <button onClick={handleClearQuotes}>clearall</button>
 
-        <div className="responsive">change me</div>
+        <div className="clearall-container">
+          <button className="clearall-btn" onClick={handleClearQuotes}>
+            Clear All
+          </button>
+        </div>
+
         <div className="quote-card-container">
           {quotesArray.map((quote, index) => (
             <QuoteCard

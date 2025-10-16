@@ -55,9 +55,10 @@
   align-items: center;
   background-color: rgb(131, 40, 13);
   color: white;
-  padding: 20px 30px;
+  padding: 20px 35px;
   position: sticky;
-  top: 0;
+  margin: o;
+  box-sizing: border-box;
   z-index: 1000;
 }
 
@@ -65,7 +66,7 @@
   display: flex;
   align-items: center;
   background-color: rgb(138, 20, 20);
-  border-radius: 15px;
+  border-radius: 8px;
   color: white;
   padding: 5px 5px;
 }
@@ -82,9 +83,8 @@
 }
 .book-icon {
   color: white;
-  font-size: 1.8rem;
+  font-size: 3rem;
   margin-right: 12px;
-  vertical-align: middle;
 }
 
 .quote-card-container {
@@ -211,13 +211,26 @@
   margin-bottom: 10px;
 }
 
-.app-background {
-  flex: 1;
-  height: 100%;
-}
-
 .app-content {
   margin: 100px 20px 20px;
+}
+.clearall-container {
+  display: flex;
+  justify-content: flex-end;
+  margin: 0 250px 10px 0;
+}
+
+.clearall-btn {
+  background-color: rgb(131, 40, 13);
+  color: white;
+  padding: 5px 8px;
+  font-size: 12x;
+  font-weight: bold;
+  border-radius: 6px;
+}
+
+.clearall-btn:hover {
+  background-color: #dd3502;
 }
 
 body,
@@ -228,19 +241,78 @@ body,
   background: #ffffff;
 }
 
-.responsive {
-  padding: 5px;
-  background-color: black;
-  color: white;
-}
-
-.dark .responsive {
-  background-color: rgb(114, 98, 29);
-  color: black;
-}
-
 body,
 #root:has(> .dark) {
   width: 100%;
   background: black;
+}
+.dark {
+  background-color: black;
+  color: #e0e0e0;
+}
+.dark .app-header {
+  background-color: rgb(59, 19, 7);
+  color: #f5f5f5;
+}
+.dark .quote-card {
+  background-color: rgb(59, 19, 7);
+  border: 1px solid white;
+}
+
+.dark .quote-card-fatrash,
+.dark .quote-card-fapen {
+  color: white;
+}
+
+.dark .quote-card-fatrash:hover,
+.dark .quote-card-fapen:hover {
+  color: black;
+}
+
+.dark .quote-form {
+  background-color: rgb(59, 19, 7);
+  border-color: white;
+}
+
+.dark .quote-form input {
+  background-color: white;
+  border: 1px solid black;
+}
+
+.dark .quote-form-submit,
+.dark .quote-form-cancel {
+  background-color: white;
+  color: black;
+}
+
+.dark .quote-form-submit:hover,
+.dark .quote-form-cancel:hover {
+ color: white;
+ background-color:  rgb(59, 19, 7);
+}
+
+.dark .clearall-btn {
+  background-color:  rgb(59, 19, 7);
+  color: white;
+}
+
+.dark .clearall-btn:hover {
+  background-color: #ff5a2a;
+}
+.dark .quote-sentence {
+  color: white;
+}
+.dark .quote-author {
+  color: white;
+}
+.dark .clearall-btn {
+  background-color: rgb(131, 40, 13);
+  color: white;
+}
+.dark .app-header button {
+  color: black;
+  background-color: white;
+}
+.dark .app-header-button:hover {
+  color: black;
 }
