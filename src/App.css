@@ -2,7 +2,7 @@ body,
 #root {
   margin: 0;
   padding: 0;
-  background: white;
+  background: #FFFDF9;
   display: flex;
   flex-direction: column;
 }
@@ -14,7 +14,7 @@ body,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(219, 180, 169);
+  background-color: #D6A77A;
   color: black;
   padding: 10px 40px;
   position: sticky;
@@ -24,7 +24,7 @@ body,
 
 .app-header button {
   border-radius: 8px;
-  background-color: rgb(131, 40, 13);
+  background-color: #7B3F00;
   color: white;
   padding: 5px 10px;
   border: none;
@@ -44,7 +44,7 @@ body,
 }
 
 .book-icon {
-  color: rgb(131, 40, 13);
+  color: rgb(102, 25, 1);
   font-size: 3rem;
   margin-right: 12px;
 }
@@ -56,7 +56,7 @@ body,
 
 .quote-card {
   border: 1px solid black;
-  background: white;
+  background: #D6A77A;
   text-align: start;
   font-style: italic;
   padding: 50px 50px 20px;
@@ -113,7 +113,7 @@ body,
 }
 .quote-form {
   padding: 30px;
-  background: white;
+  background: #D6A77A;
   border: 1px solid black;
   border-radius: 10px;
   font-family: Arial;
@@ -173,7 +173,6 @@ body,
   border-radius: 6px;
   border: none;
   cursor: pointer;
-  transition: all 0.3s ease;
 }
 
 .clearall-btn:hover {
@@ -249,4 +248,57 @@ body,
 .dark .clearall-btn:hover {
   background-color: #ff5a2a;
   color: white;
+}
+.search-bar {
+  display: block;
+  margin: 20px auto;
+  padding: 8px 12px;
+  width: 60%;
+  max-width: 500px;
+  border: 1px solid black;
+  border-radius: 8px;
+  outline: none;
+  background-color: #fffdf9;
+  color: black;
+  font-size: 15px;
+}
+.dark .search-bar {
+  background-color: black;
+  color: white;
+  border: 1px solid white;
+}
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+.filter-buttons button {
+  background-color: #7B3F00;
+  color: white;
+  border: none;
+  padding: 6px 14px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.filter-buttons button:hover {
+  background-color: #ff5a2a;
+}
+.favorite-icon {
+  color: #7B3F00;
+  margin-right: 8px;
+  font-size: 22px;
+  cursor: pointer;
+}
+.dark .favorite-icon {
+  color: white;
+}
+
+.favorite-icon:hover {
+  color: rgb(253, 64, 64);
+}
+
+.favorite-icon.active {
+  color: red;
 }

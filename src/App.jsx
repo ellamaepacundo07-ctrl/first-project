@@ -6,12 +6,14 @@ import {
   faTrash,
   faPencilAlt,
   faBook,
+  faHeart,
 } from "@fortawesome/free-solid-svg-icons";
 import useQuotes from "./hooks/useQuotes";
 import AppHeader from "./component/AppHeader";
 import useTheme from "./hooks/useTheme";
+import { useState } from "react";
 
-library.add(faTrash, faPencilAlt, faBook);
+library.add(faTrash, faPencilAlt, faBook, faHeart);
 
 function App() {
   const {
@@ -26,11 +28,36 @@ function App() {
   } = useQuotes();
 
   const { theme } = useTheme();
+  const [searchTerm, setSearchTerm] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
 
   return (
     <div className={`app-background ${theme === "dark" ? "dark" : "light"}`}>
       <AppHeader />
       <div className="app-content">
+        <div className="search-filter-section">
+          <input
+            type="text"
+            placeholder="Search quotes..."
+            className="search-bar"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+          />
+          <div className="filter-buttons">
+            <button onClick={() => setSelectedCategory("All")}>All</button>
+            <button onClick={() => setSelectedCategory("Motivational")}>
+              Motivational
+            </button>
+            <button onClick={() => setSelectedCategory("Love")}>Love</button>
+            <button onClick={() => setSelectedCategory("Wisdom")}>
+              Wisdom
+            </button>
+            <button onClick={() => setSelectedCategory("Favorites")}>
+            Favorites
+            </button>
+          </div>
+        </div>
+
         <QuoteForm handleCreate={handleCreate} />
 
         <div className="clearall-container">

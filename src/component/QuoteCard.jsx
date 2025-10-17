@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import QuoteFormEdit from "./QuoteFormEdit";
 
@@ -10,6 +11,12 @@ function QuoteCard({
   cancelEditing,
   onUpdate,
 }) {
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const toggleFavorite = () => {
+    setIsFavorite(!isFavorite);
+  };
+
   return (
     <div className="quote-card">
       {isEditing ? (
@@ -39,6 +46,14 @@ function QuoteCard({
           </div>
           <div className="quote-card-fapen" onClick={selectEdit}>
             <FontAwesomeIcon icon="pencil" />
+          </div>
+
+          <div className="quote-actions">
+            <FontAwesomeIcon
+              icon="heart"
+              className={`favorite-icon ${isFavorite ? "active" : ""}`}
+              onClick={toggleFavorite}
+            />
           </div>
         </>
       )}
