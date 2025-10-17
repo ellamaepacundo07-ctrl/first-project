@@ -1,77 +1,39 @@
-.login-form {
-  background-color: #f2f2f2;
-  border: 1px solid #ccc;
-  padding: 30px;
-  border-radius: 10px;
-  width: 300px;
-  margin: 30px auto;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+body,
+#root {
+  margin: 0;
+  padding: 0;
+  background: white;
+  display: flex;
+  flex-direction: column;
 }
 
-.login-form h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.login-form div {
-  margin-bottom: 15px;
-}
-
-.login-form label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 5px;
-}
-
-.login-form input {
-  width: 100%;
-  padding: 8px;
-  border-radius: 5px;
-  border: 1px solid #aaa;
-}
-
-.login-form button {
-  width: 100%;
-  padding: 10px;
-  background-color: #119960;
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  cursor: pointer;
-}
-
-.login-form button:hover {
-  background-color: #0d7f4e;
-}
-
-.app-background {
-  flex: 1;
-  height: 100%;
+.dark {
+  background: black;
 }
 .app-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(131, 40, 13);
-  color: white;
-  padding: 20px 35px;
+  background-color: rgb(219, 180, 169);
+  color: black;
+  padding: 10px 40px;
   position: sticky;
-  margin: o;
-  box-sizing: border-box;
+  top: 0;
   z-index: 1000;
 }
 
 .app-header button {
-  display: flex;
-  align-items: center;
-  background-color: rgb(138, 20, 20);
   border-radius: 8px;
+  background-color: rgb(131, 40, 13);
   color: white;
-  padding: 5px 5px;
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
 }
+
 .app-header button:hover {
   background-color: black;
+  color: white;
 }
 
 .site-title {
@@ -79,14 +41,13 @@
   align-items: center;
   font-size: 30px;
   font-weight: bold;
-  margin: 0;
 }
+
 .book-icon {
-  color: white;
+  color: rgb(131, 40, 13);
   font-size: 3rem;
   margin-right: 12px;
 }
-
 .quote-card-container {
   display: flex;
   flex-direction: column;
@@ -107,30 +68,26 @@
   position: relative;
 }
 
-.quote-card-fatrash {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  font-size: 18px;
-  cursor: pointer;
-  color: rgb(131, 40, 13);
-}
-
+.quote-card-fatrash,
 .quote-card-fapen {
   position: absolute;
   top: 20px;
-  right: 60px;
   font-size: 18px;
   cursor: pointer;
   color: rgb(131, 40, 13);
 }
 
-.quote-card-fatrash:hover {
-  color: black;
+.quote-card-fatrash {
+  right: 20px;
 }
 
+.quote-card-fapen {
+  right: 60px;
+}
+
+.quote-card-fatrash:hover,
 .quote-card-fapen:hover {
-  color: black;
+  color: rgb(218, 67, 22);
 }
 
 .quote-sentence {
@@ -154,47 +111,16 @@
   margin-top: 30px;
   text-align: center;
 }
-
 .quote-form {
   padding: 30px;
   background: white;
-  border: 2px solid black;
+  border: 1px solid black;
   border-radius: 10px;
   font-family: Arial;
   margin: auto;
   width: fit-content;
   margin-bottom: 20px;
-}
-
-.quote-form-submit,
-.quote-form-cancel {
-  margin-top: 10px;
-  padding: 4px 6px;
-  border-radius: 6px;
-  font-size: 12px;
-  font-weight: bold;
-  cursor: pointer;
-  color: white;
-}
-
-.quote-form-submit {
-  color: white;
-  background-color: rgb(131, 40, 13);
-  margin-right: 4px;
-}
-.quote-form-submit:hover {
-  background-color: rgb(218, 67, 22);
-}
-
-.quote-form-cancel {
-  color: white;
-  background-color: rgb(131, 40, 13);
-  border-color: rgb(0, 0, 0);
-  margin-right: 4px;
-}
-
-.quote-form-cancel:hover {
-  background-color: rgb(231, 69, 19);
+  transition: all 0.3s ease;
 }
 
 .quote-form-input div {
@@ -205,15 +131,33 @@
 .quote-form-input input {
   padding: 5px 10px;
   width: 350px;
+  border: 1px solid #aaa;
+  border-radius: 5px;
 }
 
 .quote-form-input:first-child {
   margin-bottom: 10px;
 }
 
-.app-content {
-  margin: 100px 20px 20px;
+.quote-form-submit,
+.quote-form-cancel {
+  margin-top: 10px;
+  margin-left: 2px;
+  padding: 5px 8px;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  color: white;
+  background-color: rgb(131, 40, 13);
+  border: none;
 }
+
+.quote-form-submit:hover,
+.quote-form-cancel:hover {
+  background-color: rgb(218, 67, 22);
+}
+
 .clearall-container {
   display: flex;
   justify-content: flex-end;
@@ -224,39 +168,34 @@
   background-color: rgb(131, 40, 13);
   color: white;
   padding: 5px 8px;
-  font-size: 12x;
+  font-size: 12px;
   font-weight: bold;
   border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
 .clearall-btn:hover {
   background-color: #dd3502;
 }
-
-body,
-#root {
-  margin: 0px;
-  display: flex;
-  width: 100%;
-  background: #ffffff;
+.dark .book-icon {
+  color: white;
 }
 
-body,
-#root:has(> .dark) {
-  width: 100%;
-  background: black;
-}
-.dark {
-  background-color: black;
-  color: #e0e0e0;
-}
 .dark .app-header {
   background-color: rgb(59, 19, 7);
   color: #f5f5f5;
 }
+
+.dark .app-header button {
+  background-color: white;
+  color: black;
+}
+
 .dark .quote-card {
   background-color: rgb(59, 19, 7);
-  border: 1px solid white;
+  color: white;
 }
 
 .dark .quote-card-fatrash,
@@ -266,16 +205,19 @@ body,
 
 .dark .quote-card-fatrash:hover,
 .dark .quote-card-fapen:hover {
-  color: black;
+  color: #ff5a2a;
 }
-
 .dark .quote-form {
   background-color: rgb(59, 19, 7);
-  border-color: white;
+  color: white;
+}
+.dark .quote-form-input div {
+  color: white;
 }
 
 .dark .quote-form input {
   background-color: white;
+  color: black;
   border: 1px solid black;
 }
 
@@ -287,32 +229,24 @@ body,
 
 .dark .quote-form-submit:hover,
 .dark .quote-form-cancel:hover {
- color: white;
- background-color:  rgb(59, 19, 7);
+  color: white;
+  background-color: #ff5a2a;
+}
+
+.dark .quote-sentence,
+.dark .quote-author {
+  color: white;
+}
+.dark .quote-author-line {
+  background: white;
 }
 
 .dark .clearall-btn {
-  background-color:  rgb(59, 19, 7);
-  color: white;
+  background-color: white;
+  color: black;
 }
 
 .dark .clearall-btn:hover {
   background-color: #ff5a2a;
-}
-.dark .quote-sentence {
   color: white;
-}
-.dark .quote-author {
-  color: white;
-}
-.dark .clearall-btn {
-  background-color: rgb(131, 40, 13);
-  color: white;
-}
-.dark .app-header button {
-  color: black;
-  background-color: white;
-}
-.dark .app-header-button:hover {
-  color: black;
 }
