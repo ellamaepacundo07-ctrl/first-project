@@ -53,7 +53,7 @@ function App() {
               Wisdom
             </button>
             <button onClick={() => setSelectedCategory("Favorites")}>
-            Favorites
+              Favorites
             </button>
           </div>
         </div>
@@ -61,7 +61,14 @@ function App() {
         <QuoteForm handleCreate={handleCreate} />
 
         <div className="clearall-container">
-          <button className="clearall-btn" onClick={handleClearQuotes}>
+          <button
+            className="clearall-btn"
+            onClick={() => {
+              if (confirm("Would you like to clear all quotes?")) {
+                handleClearQuotes();
+              }
+            }}
+          >
             Clear All
           </button>
         </div>
