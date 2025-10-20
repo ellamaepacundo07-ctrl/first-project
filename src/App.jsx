@@ -74,20 +74,31 @@ function App() {
         </div>
 
         <div className="quote-card-container">
-          {quotesArray.map((quote, index) => (
-            <QuoteCard
-              key={index}
-              sentence={quote.sentence}
-              author={quote.author}
-              onDelete={() => handleDelete(index)}
-              isEditing={editingIndex === index}
-              selectEdit={() => handleSelectEdit(index)}
-              cancelEditing={handleCancelEdit}
-              onUpdate={(newSentence, newAuthor) =>
-                handleEdit(index, newSentence, newAuthor)
-              }
-            />
-          ))}
+          {quotesArray
+            .filter((quote) => {
+              if (selectedCategory === "Favorites") return quote.isFavorite;
+              return true;
+            })
+            .filter((quote) =>
+              quote.sentence.toLowerCase().includes(searchTerm.toLowerCase())
+            )
+
+            .map((quote, index) => (
+              <QuoteCard
+                key={index}
+                sentence={quote.sentence}
+                author={quote.author}
+                onDelete={() => handleDelete(index)}
+                isEditing={editingIndex === index}
+                selectEdit={() => handleSelectEdit(index)}
+                cancelEditing={handleCancelEdit}
+                onUpdate={(newSentence, newAuthor) =>
+                  handleEdit(index, newSentence, newAuthor)
+                }
+                isFavorite={quote.isFavorite}
+                onToggleFavorite={() => handleToggleFavorite(index)}
+              />
+            ))}
         </div>
       </div>
     </div>

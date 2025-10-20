@@ -286,9 +286,9 @@ body,
   background-color: #ff5a2a;
 }
 .favorite-icon {
-  color: #7B3F00;
+  color: white;
   margin-right: 8px;
-  font-size: 22px;
+  font-size: 21px;
   cursor: pointer;
 }
 .dark .favorite-icon {
@@ -297,6 +297,17 @@ body,
 
 .favorite-icon:hover {
   color: rgb(253, 64, 64);
+}
+
+.favorite-icon.active {
+  color: red;
+}
+.favorite-icon {
+  color: gray;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-size: 1.5rem;
+  margin-top: 5px;
 }
 
 .favorite-icon.active {
