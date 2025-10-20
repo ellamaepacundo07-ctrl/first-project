@@ -302,14 +302,7 @@ body,
 .favorite-icon.active {
   color: red;
 }
-.favorite-icon {
-  color: gray;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  font-size: 1.5rem;
-  margin-top: 5px;
-}
-
-.favorite-icon.active {
-  color: red;
+.main-content {
+  min-height: 80vh; /* keeps the background full height */
+  padding: 20px;
 }
