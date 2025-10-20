@@ -2,7 +2,7 @@ body,
 #root {
   margin: 0;
   padding: 0;
-  background: #FFFDF9;
+  background: #fffdf9;
   display: flex;
   flex-direction: column;
 }
@@ -14,7 +14,7 @@ body,
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #D6A77A;
+  background-color: #d6a77a;
   color: black;
   padding: 10px 40px;
   position: sticky;
@@ -24,7 +24,7 @@ body,
 
 .app-header button {
   border-radius: 8px;
-  background-color: #7B3F00;
+  background-color: #7b3f00;
   color: white;
   padding: 5px 10px;
   border: none;
@@ -56,7 +56,7 @@ body,
 
 .quote-card {
   border: 1px solid black;
-  background: #D6A77A;
+  background: #d6a77a;
   text-align: start;
   font-style: italic;
   padding: 50px 50px 20px;
@@ -113,7 +113,7 @@ body,
 }
 .quote-form {
   padding: 30px;
-  background: #D6A77A;
+  background: #d6a77a;
   border: 1px solid black;
   border-radius: 10px;
   font-family: Arial;
@@ -275,7 +275,7 @@ body,
   flex-wrap: wrap;
 }
 .filter-buttons button {
-  background-color: #7B3F00;
+  background-color: #7b3f00;
   color: white;
   border: none;
   padding: 6px 14px;
@@ -303,6 +303,6 @@ body,
   color: red;
 }
 .main-content {
-  min-height: 80vh; /* keeps the background full height */
+  min-height: 80vh;
   padding: 20px;
 }
