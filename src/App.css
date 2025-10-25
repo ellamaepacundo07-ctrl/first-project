@@ -119,8 +119,7 @@ body,
   font-family: Arial;
   margin: auto;
   width: fit-content;
-  margin-bottom: 20px;
-  transition: all 0.3s ease;
+  margin-bottom: 30px;
 }
 
 .quote-form-input div {
@@ -249,29 +248,13 @@ body,
   background-color: #ff5a2a;
   color: white;
 }
-.search-bar {
-  display: block;
-  margin: 20px auto;
-  padding: 8px 12px;
-  width: 60%;
-  max-width: 500px;
-  border: 1px solid black;
-  border-radius: 8px;
-  outline: none;
-  background-color: #fffdf9;
-  color: black;
-  font-size: 15px;
-}
-.dark .search-bar {
-  background-color: black;
-  color: white;
-  border: 1px solid white;
-}
+
 .filter-buttons {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   margin-bottom: 25px;
+  margin-top: 25px;
   flex-wrap: wrap;
 }
 .filter-buttons button {
@@ -306,11 +289,16 @@ body,
   min-height: 80vh;
   padding: 20px;
 }
-
-.favorite-icon:hover {
-  color: rgb(253, 64, 64);
+.quote-form-input select {
+  padding: 5px 10px;
+  border-radius: 5px;
+  width: 150px;
+  font-size: 12px;
+  margin-bottom: 10px;
+  cursor: pointer;
 }
 
-.favorite-icon.active {
-  color: red;
+.dark .quote-form-input select {
+  background-color: white;
+  color: black;
 }

@@ -18,45 +18,41 @@ library.add(faTrash, faPencilAlt, faBook, faHeart);
 function App() {
   const {
     quotesArray,
-    editingIndex,
-    handleDelete,
-    handleEdit,
+    editingId,
+    handleDeleteById,
+    handleEditById,
     handleSelectEdit,
     handleCancelEdit,
     handleCreate,
     handleClearQuotes,
-    handleToggleFavorite,
+    handleToggleFavoriteById,
   } = useQuotes();
 
   const { theme } = useTheme();
-  const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
+
+  // Filter quotes based on category
+  const filteredQuotes = quotesArray.filter((quote) => {
+    if (selectedCategory === "All") return true;
+    if (selectedCategory === "Favorites") return quote.favorite;
+    return quote.category === selectedCategory;
+  });
 
   return (
     <div className={`app-background ${theme === "dark" ? "dark" : "light"}`}>
       <AppHeader />
+
       <div className="app-content">
-        <div className="search-filter-section">
-          <input
-            type="text"
-            placeholder="Search quotes..."
-            className="search-bar"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
-          <div className="filter-buttons">
-            <button onClick={() => setSelectedCategory("All")}>All</button>
-            <button onClick={() => setSelectedCategory("Motivational")}>
-              Motivational
-            </button>
-            <button onClick={() => setSelectedCategory("Love")}>Love</button>
-            <button onClick={() => setSelectedCategory("Wisdom")}>
-              Wisdom
-            </button>
-            <button onClick={() => setSelectedCategory("Favorites")}>
-              Favorites
-            </button>
-          </div>
+        <div className="filter-buttons">
+          <button onClick={() => setSelectedCategory("All")}>All</button>
+          <button onClick={() => setSelectedCategory("Motivational")}>
+            Motivational
+          </button>
+          <button onClick={() => setSelectedCategory("Love")}>Love</button>
+          <button onClick={() => setSelectedCategory("Wisdom")}>Wisdom</button>
+          <button onClick={() => setSelectedCategory("Favorites")}>
+            Favorites
+          </button>
         </div>
 
         <QuoteForm handleCreate={handleCreate} />
@@ -75,19 +71,19 @@ function App() {
         </div>
 
         <div className="quote-card-container">
-          {quotesArray.map((quote, index) => (
+          {filteredQuotes.map((quote) => (
             <QuoteCard
               key={quote.id}
               sentence={quote.sentence}
               author={quote.author}
-              onDelete={() => handleDelete(index)}
-              isEditing={editingIndex === index}
-              selectEdit={() => handleSelectEdit(index)}
+              onDelete={() => handleDeleteById(quote.id)}
+              isEditing={editingId === quote.id}
+              selectEdit={() => handleSelectEdit(quote.id)}
               cancelEditing={handleCancelEdit}
               onUpdate={(newSentence, newAuthor) =>
-                handleEdit(index, newSentence, newAuthor)
+                handleEditById(quote.id, newSentence, newAuthor)
               }
-              onToggleFavorite={() => handleToggleFavorite(index)}
+              onToggleFavorite={() => handleToggleFavoriteById(quote.id)}
               isFavorite={quote.favorite}
             />
           ))}

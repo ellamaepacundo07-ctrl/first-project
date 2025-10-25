@@ -3,20 +3,21 @@ import { useState } from "react";
 function QuoteForm({ handleCreate }) {
   const [sentence, setSentence] = useState("");
   const [author, setAuthor] = useState("");
+  const [category, setCategory] = useState("Motivational"); // default category
 
   function onSubmit() {
     if (sentence.length > 0 && author.length > 0) {
-      handleCreate(sentence, author);
+      handleCreate(sentence, author, category);
       onClear();
       return;
     }
-
-    alert("please enter inputs");
+    alert("Please enter sentence and author");
   }
 
   function onClear() {
     setSentence("");
     setAuthor("");
+    setCategory("Motivational");
   }
 
   return (
@@ -26,17 +27,28 @@ function QuoteForm({ handleCreate }) {
         <input
           type="text"
           value={sentence}
-          onChange={(event) => setSentence(event.target.value)}
+          onChange={(e) => setSentence(e.target.value)}
         />
       </div>
+
       <div className="quote-form-input">
         <div>Author</div>
         <input
           type="text"
           value={author}
-          onChange={(event) => setAuthor(event.target.value)}
+          onChange={(e) => setAuthor(e.target.value)}
         />
       </div>
+
+      <div className="quote-form-input">
+        <div>Category</div>
+        <select value={category} onChange={(e) => setCategory(e.target.value)}>
+          <option value="Motivational">Motivational</option>
+          <option value="Love">Love</option>
+          <option value="Wisdom">Wisdom</option>
+        </select>
+      </div>
+
       <button className="quote-form-submit" onClick={onSubmit}>
         Submit
       </button>
@@ -46,4 +58,5 @@ function QuoteForm({ handleCreate }) {
     </div>
   );
 }
+
 export default QuoteForm;

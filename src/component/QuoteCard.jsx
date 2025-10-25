@@ -10,9 +10,12 @@ function QuoteCard({
   isEditing,
   cancelEditing,
   onUpdate,
-  onToggleFavorite,
-  isFavorite,
 }) {
+  const [isFavorite, setIsFavorite] = useState(false);
+
+  const toggleFavorite = () => {
+    setIsFavorite(!isFavorite);
+  };
 
   return (
     <div className="quote-card">
@@ -49,7 +52,7 @@ function QuoteCard({
             <FontAwesomeIcon
               icon="heart"
               className={`favorite-icon ${isFavorite ? "active" : ""}`}
-               onClick={onToggleFavorite}
+              onClick={toggleFavorite}
             />
           </div>
         </>
