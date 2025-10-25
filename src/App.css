@@ -306,3 +306,11 @@ body,
   min-height: 80vh;
   padding: 20px;
 }
+
+.favorite-icon:hover {
+  color: rgb(253, 64, 64);
+}
+
+.favorite-icon.active {
+  color: red;
+}

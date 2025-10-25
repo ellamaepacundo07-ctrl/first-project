@@ -25,6 +25,7 @@ function App() {
     handleCancelEdit,
     handleCreate,
     handleClearQuotes,
+    handleToggleFavorite,
   } = useQuotes();
 
   const { theme } = useTheme();
@@ -76,7 +77,7 @@ function App() {
         <div className="quote-card-container">
           {quotesArray.map((quote, index) => (
             <QuoteCard
-              key={index}
+              key={quote.id}
               sentence={quote.sentence}
               author={quote.author}
               onDelete={() => handleDelete(index)}
@@ -86,6 +87,8 @@ function App() {
               onUpdate={(newSentence, newAuthor) =>
                 handleEdit(index, newSentence, newAuthor)
               }
+              onToggleFavorite={() => handleToggleFavorite(index)}
+              isFavorite={quote.favorite}
             />
           ))}
         </div>
